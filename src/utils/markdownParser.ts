@@ -6,13 +6,13 @@ export function parseMarkdown(text: string): string {
   
   // Step 1: Parse numbered lists TRƯỚC (để tránh conflict với dấu *)
   // Format: 1. item hoặc số bất kỳ
-  formatted = formatted.replace(/^(\d+)\.\s+(.+)$/gm, (match, num, content) => {
+  formatted = formatted.replace(/^(\d+)\.\s+(.+)$/gm, (_match, num, content) => {
     return `<div class="flex gap-2 my-1.5"><span class="font-bold text-primary-600 dark:text-primary-400 min-w-[28px] flex-shrink-0">${num}.</span><span class="flex-1">${content}</span></div>`;
   });
   
   // Step 2: Parse bullet points với * hoặc - ở đầu dòng (kể cả có indent)
   // Bắt: "* item", "  * item", "- item"
-  formatted = formatted.replace(/^(\s*)[\*\-]\s+(.+)$/gm, (match, indent, content) => {
+  formatted = formatted.replace(/^(\s*)[\*\-]\s+(.+)$/gm, (_match, indent, content) => {
     const indentClass = indent.length > 0 ? 'ml-6' : '';
     return `<div class="flex gap-2 my-1 ${indentClass}"><span class="text-primary-600 dark:text-primary-400 flex-shrink-0">•</span><span class="flex-1">${content}</span></div>`;
   });
