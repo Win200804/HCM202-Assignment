@@ -1,0 +1,86 @@
+// Timeline data - các sự kiện lịch sử quan trọng
+import type { TimelineEvent } from '../types/content.types';
+
+export const timelineData: TimelineEvent[] = [
+  {
+    id: 'timeline-1',
+    year: 1919,
+    title: 'Yêu sách 8 điểm tại Hội nghị Vécxây',
+    description: 'Nguyễn Ái Quốc gửi bản Yêu sách của nhân dân An Nam đến Hội nghị Vécxây, đòi quyền bình đẳng và tự do cho người dân Đông Dương.',
+    icon: 'FileText',
+    category: 'declaration',
+  },
+  {
+    id: 'timeline-2',
+    year: 1920,
+    title: 'Tham gia Đảng Cộng sản Pháp',
+    description: 'Sau khi đọc Luận cương của Lênin về vấn đề dân tộc và thuộc địa, Hồ Chí Minh tìm ra con đường cứu nước: con đường cách mạng vô sản.',
+    icon: 'Star',
+    category: 'revolutionary',
+  },
+  {
+    id: 'timeline-3',
+    year: 1930,
+    title: 'Thành lập Đảng Cộng sản Việt Nam',
+    description: 'Đảng Cộng sản Việt Nam ra đời, thống nhất các tổ chức cộng sản trong nước. Chánh cương vắn tắt xác định mục tiêu: đánh đổ đế quốc và phong kiến.',
+    icon: 'Flag',
+    category: 'revolutionary',
+  },
+  {
+    id: 'timeline-4',
+    year: 1941,
+    title: 'Thành lập Mặt trận Việt Minh',
+    description: 'Hồ Chí Minh về nước, thành lập Mặt trận Việt Nam Độc lập Đồng minh (Việt Minh), chuẩn bị cho tổng khởi nghĩa.',
+    icon: 'Users',
+    category: 'revolutionary',
+  },
+  {
+    id: 'timeline-5',
+    year: 1945,
+    title: 'Cách mạng Tháng Tám thành công',
+    description: 'Tổng khởi nghĩa giành chính quyền trong cả nước. Ngày 2/9, Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.',
+    icon: 'Sparkles',
+    category: 'declaration',
+  },
+  {
+    id: 'timeline-6',
+    year: 1946,
+    title: 'Kêu gọi toàn quốc kháng chiến',
+    description: 'Thực dân Pháp xâm lược lần 2. Chủ tịch Hồ Chí Minh kêu gọi: "Thà hy sinh tất cả, chứ nhất định không chịu mất nước".',
+    icon: 'Swords',
+    category: 'historical',
+  },
+  {
+    id: 'timeline-7',
+    year: 1954,
+    title: 'Chiến thắng Điện Biên Phủ',
+    description: 'Quân dân ta đại thắng Điện Biên Phủ, buộc thực dân Pháp ký Hiệp định Giơnevơ, công nhận độc lập, chủ quyền của Việt Nam.',
+    icon: 'Trophy',
+    category: 'historical',
+  },
+  {
+    id: 'timeline-8',
+    year: 1965,
+    title: 'Khẩu hiệu "Không có gì quý hơn độc lập, tự do"',
+    description: 'Trong bối cảnh chiến tranh chống Mỹ, Chủ tịch Hồ Chí Minh khẳng định giá trị thiêng liêng nhất của dân tộc.',
+    icon: 'Heart',
+    category: 'declaration',
+  },
+  {
+    id: 'timeline-9',
+    year: 1969,
+    title: 'Di chúc của Chủ tịch Hồ Chí Minh',
+    description: 'Người tin tưởng tuyệt đối: "Tổ quốc ta nhất định sẽ thống nhất. Đồng bào Nam, Bắc nhất định sẽ sum họp một nhà".',
+    icon: 'Scroll',
+    category: 'declaration',
+  },
+  {
+    id: 'timeline-10',
+    year: 1975,
+    title: 'Thống nhất đất nước',
+    description: 'Đất nước hoàn toàn thống nhất, thực hiện di nguyện của Chủ tịch Hồ Chí Minh và khát vọng của dân tộc Việt Nam.',
+    icon: 'CheckCircle2',
+    category: 'historical',
+  },
+];
+
