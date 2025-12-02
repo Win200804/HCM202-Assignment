@@ -89,33 +89,27 @@ class StorageService {
   getProgressPercentage(): number {
     const progress = this.getProgress();
     
-    // Section I subsections (including header)
-    const section1Items = [
-      'subsection-1-1',    // 1. Vấn đề độc lập dân tộc
-      'subsection-1-1-a',  // a)
-      'subsection-1-1-b',  // b)
-      'subsection-1-1-c',  // c)
-      'subsection-1-1-d',  // d)
+    // All subsections in the learning content
+    const allItems = [
+      'subsection-1-1',   // 1. Vấn đề dân tộc
+      'subsection-1-a',   // A. Độc lập, tự do là quyền thiêng liêng...
+      'subsection-1-a1',  // A.1. Cơ sở lý luận
+      'subsection-1-a2',  // A.2. Những mốc son lịch sử
+      'subsection-1-b',   // B. Độc lập dân tộc phải gắn liền...
+      'subsection-1-b1',  // B.1. Mục đích tối thượng
+      'subsection-1-b2',  // B.2. Những yêu cầu cụ thể
+      'subsection-1-c',   // C. Độc lập dân tộc phải là nền độc lập thật sự...
+      'subsection-1-c1',  // C.1. Tiêu chí của nền độc lập thật sự
+      'subsection-1-d',   // D. Độc lập dân tộc gắn liền với thống nhất...
+      'subsection-1-d1',  // D.1. Lập trường kiên quyết
+      'subsection-1-d2',  // D.2. Niềm tin bất diệt
     ];
     
-    // Section II subsections
-    const section2Items = [
-      'subsection-2-1',  // a)
-      'subsection-2-2',  // b)
-      'subsection-2-3',  // c)
-      'subsection-2-4',  // d)
-      'subsection-2-5',  // đ)
-    ];
+    // Count completed items
+    const completedCount = allItems.filter(id => progress[id]).length;
     
-    // Count completed items in each section
-    const section1Completed = section1Items.filter(id => progress[id]).length;
-    const section2Completed = section2Items.filter(id => progress[id]).length;
-    
-    // Calculate percentage: Section I = 50%, Section II = 50%
-    const section1Percent = (section1Completed / section1Items.length) * 50;
-    const section2Percent = (section2Completed / section2Items.length) * 50;
-    
-    return Math.round(section1Percent + section2Percent);
+    // Calculate percentage: each item ≈ 8.33%
+    return Math.round((completedCount / allItems.length) * 100);
   }
 
   // Voice settings

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Quote as QuoteIcon } from 'lucide-react';
 import type { ContentSection as ContentSectionType } from '../../types/content.types';
 import { Card } from '../common/Card';
+import { parseMarkdown } from '../../utils/markdownParser';
 
 interface ContentSectionProps {
   section: ContentSectionType;
@@ -25,9 +26,10 @@ export function ContentSection({ section }: ContentSectionProps) {
 
           {/* Section content */}
           {section.content && (
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              {section.content}
-            </p>
+            <div 
+              className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
+              dangerouslySetInnerHTML={{ __html: parseMarkdown(section.content) }}
+            />
           )}
 
           {/* Subsections */}
@@ -40,9 +42,10 @@ export function ContentSection({ section }: ContentSectionProps) {
                   </h3>
 
                   {subsection.content && (
-                    <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                      {subsection.content}
-                    </p>
+                    <div 
+                      className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4"
+                      dangerouslySetInnerHTML={{ __html: parseMarkdown(subsection.content) }}
+                    />
                   )}
 
                   {/* Quotes */}
