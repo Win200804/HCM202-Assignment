@@ -67,11 +67,22 @@ export function Timeline() {
               <div className={`w-full md:w-5/12 ml-24 md:ml-0 ${isLeft ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'}`}>
                 <Card hover padding="md" className="relative">
                   {/* Year badge */}
-                  <div className="absolute -top-3 -left-3">
+                  <div className="absolute -top-3 -left-3 z-10">
                     <span className="inline-flex items-center justify-center w-16 h-16 text-xl font-bold text-white bg-gradient-to-br from-primary-600 to-secondary-500 rounded-full shadow-lg">
                       {event.year}
                     </span>
                   </div>
+
+                  {/* Historical image */}
+                  {event.image && (
+                    <div className="mb-4 overflow-hidden rounded-lg">
+                      <img 
+                        src={event.image} 
+                        alt={`${event.title} - ${event.year}`}
+                        className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
 
                   <div className="pt-4">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white font-display mb-3">

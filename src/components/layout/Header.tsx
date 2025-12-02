@@ -14,7 +14,6 @@ export function Header() {
     { label: 'Trang chủ', path: ROUTES.HOME },
     { label: 'Nội dung', path: ROUTES.CONTENT },
     { label: 'Quiz', path: ROUTES.QUIZ },
-    { label: 'Phân tích', path: ROUTES.ANALYSIS },
   ];
 
   return (
@@ -36,16 +35,17 @@ export function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation - Enhanced size */}
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={cn(
-                  'px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
+                  'px-6 py-3 rounded-lg text-base font-semibold transition-all duration-200',
                   'text-gray-700 dark:text-gray-300',
-                  'hover:bg-primary-50 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400'
+                  'hover:bg-primary-50 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400',
+                  'hover:scale-105 active:scale-95'
                 )}
               >
                 {item.label}
@@ -72,7 +72,7 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Enhanced size */}
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800">
             {navItems.map((item) => (
@@ -81,7 +81,7 @@ export function Header() {
                 to={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={cn(
-                  'block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200',
+                  'block px-5 py-4 rounded-lg text-lg font-semibold transition-colors duration-200',
                   'text-gray-700 dark:text-gray-300',
                   'hover:bg-primary-50 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400'
                 )}

@@ -5,7 +5,6 @@ import { QuizProvider } from './contexts/QuizContext';
 import { Home } from './pages/Home';
 import { Content } from './pages/Content';
 import { Quiz } from './pages/Quiz';
-import { Analysis } from './pages/Analysis';
 import { ROUTES } from './utils/constants';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
             <Route path={ROUTES.HOME} element={<Home />} />
             <Route path={ROUTES.CONTENT} element={<Content />} />
             <Route path={ROUTES.QUIZ} element={<Quiz />} />
-            <Route path={ROUTES.ANALYSIS} element={<Analysis />} />
           </Routes>
         </Router>
       </QuizProvider>

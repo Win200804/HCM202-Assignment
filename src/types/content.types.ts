@@ -27,5 +27,6 @@ export interface TimelineEvent {
   description: string;
   icon?: string;
   category: 'historical' | 'revolutionary' | 'declaration';
+  image?: string; // Đường dẫn ảnh minh họa cho sự kiện
 }
 

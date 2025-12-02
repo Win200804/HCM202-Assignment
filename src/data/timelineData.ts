@@ -9,6 +9,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Nguyễn Ái Quốc gửi bản Yêu sách của nhân dân An Nam đến Hội nghị Vécxây, đòi quyền bình đẳng và tự do cho người dân Đông Dương.',
     icon: 'FileText',
     category: 'declaration',
+    image: '/assets/images/hcm_1919.jpg',
   },
   {
     id: 'timeline-2',
@@ -17,6 +18,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Sau khi đọc Luận cương của Lênin về vấn đề dân tộc và thuộc địa, Hồ Chí Minh tìm ra con đường cứu nước: con đường cách mạng vô sản.',
     icon: 'Star',
     category: 'revolutionary',
+    image: '/assets/images/hcm_1920.jpg',
   },
   {
     id: 'timeline-3',
@@ -25,6 +27,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Đảng Cộng sản Việt Nam ra đời, thống nhất các tổ chức cộng sản trong nước. Chánh cương vắn tắt xác định mục tiêu: đánh đổ đế quốc và phong kiến.',
     icon: 'Flag',
     category: 'revolutionary',
+    image: '/assets/images/hcm_1930.jpg',
   },
   {
     id: 'timeline-4',
@@ -33,6 +36,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Hồ Chí Minh về nước, thành lập Mặt trận Việt Nam Độc lập Đồng minh (Việt Minh), chuẩn bị cho tổng khởi nghĩa.',
     icon: 'Users',
     category: 'revolutionary',
+    image: '/assets/images/hcm_1941.jpg',
   },
   {
     id: 'timeline-5',
@@ -41,6 +45,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Tổng khởi nghĩa giành chính quyền trong cả nước. Ngày 2/9, Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.',
     icon: 'Sparkles',
     category: 'declaration',
+    image: '/assets/images/hcm_1945.jpg',
   },
   {
     id: 'timeline-6',
@@ -49,6 +54,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Thực dân Pháp xâm lược lần 2. Chủ tịch Hồ Chí Minh kêu gọi: "Thà hy sinh tất cả, chứ nhất định không chịu mất nước".',
     icon: 'Swords',
     category: 'historical',
+    image: '/assets/images/hcm_1946.jpg',
   },
   {
     id: 'timeline-7',
@@ -57,6 +63,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Quân dân ta đại thắng Điện Biên Phủ, buộc thực dân Pháp ký Hiệp định Giơnevơ, công nhận độc lập, chủ quyền của Việt Nam.',
     icon: 'Trophy',
     category: 'historical',
+    image: '/assets/images/hcm_1954.jpg',
   },
   {
     id: 'timeline-8',
@@ -65,6 +72,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Trong bối cảnh chiến tranh chống Mỹ, Chủ tịch Hồ Chí Minh khẳng định giá trị thiêng liêng nhất của dân tộc.',
     icon: 'Heart',
     category: 'declaration',
+    image: '/assets/images/hcm_1965.jpg',
   },
   {
     id: 'timeline-9',
@@ -73,6 +81,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Người tin tưởng tuyệt đối: "Tổ quốc ta nhất định sẽ thống nhất. Đồng bào Nam, Bắc nhất định sẽ sum họp một nhà".',
     icon: 'Scroll',
     category: 'declaration',
+    image: '/assets/images/hcm_1969.jpg',
   },
   {
     id: 'timeline-10',
@@ -81,6 +90,7 @@ export const timelineData: TimelineEvent[] = [
     description: 'Đất nước hoàn toàn thống nhất, thực hiện di nguyện của Chủ tịch Hồ Chí Minh và khát vọng của dân tộc Việt Nam.',
     icon: 'CheckCircle2',
     category: 'historical',
+    image: '/assets/images/hcm_1975.jpg',
   },
 ];
 

@@ -39,6 +39,5 @@ export const ROUTES = {
   HOME: '/',
   CONTENT: '/noi-dung',
   QUIZ: '/quiz',
-  ANALYSIS: '/phan-tich',
 } as const;
 
