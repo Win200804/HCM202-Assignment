@@ -1,7 +1,7 @@
 // Home page
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Trophy, BookOpen, Clock, Target, CheckCircle2, Users, Award, Lightbulb, GraduationCap } from 'lucide-react';
+import { ArrowRight, Trophy, Target, Users, Award, GraduationCap } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
