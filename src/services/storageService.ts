@@ -78,11 +78,44 @@ class StorageService {
     this.set(STORAGE_KEYS.PROGRESS, progress);
   }
 
+  // Set progress for multiple sections at once
+  setProgressBatch(updates: Record<string, boolean>): void {
+    const progress = this.getProgress();
+    Object.assign(progress, updates);
+    this.set(STORAGE_KEYS.PROGRESS, progress);
+  }
+
+  // Get progress percentage - based on subsections completion
   getProgressPercentage(): number {
     const progress = this.getProgress();
-    const completed = Object.values(progress).filter(Boolean).length;
-    const total = Object.keys(progress).length;
-    return total > 0 ? Math.round((completed / total) * 100) : 0;
+    
+    // Section I subsections (including header)
+    const section1Items = [
+      'subsection-1-1',    // 1. Vấn đề độc lập dân tộc
+      'subsection-1-1-a',  // a)
+      'subsection-1-1-b',  // b)
+      'subsection-1-1-c',  // c)
+      'subsection-1-1-d',  // d)
+    ];
+    
+    // Section II subsections
+    const section2Items = [
+      'subsection-2-1',  // a)
+      'subsection-2-2',  // b)
+      'subsection-2-3',  // c)
+      'subsection-2-4',  // d)
+      'subsection-2-5',  // đ)
+    ];
+    
+    // Count completed items in each section
+    const section1Completed = section1Items.filter(id => progress[id]).length;
+    const section2Completed = section2Items.filter(id => progress[id]).length;
+    
+    // Calculate percentage: Section I = 50%, Section II = 50%
+    const section1Percent = (section1Completed / section1Items.length) * 50;
+    const section2Percent = (section2Completed / section2Items.length) * 50;
+    
+    return Math.round(section1Percent + section2Percent);
   }
 
   // Voice settings

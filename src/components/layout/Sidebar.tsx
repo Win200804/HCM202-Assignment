@@ -20,12 +20,65 @@ export function Sidebar() {
     setIsOpen(false);
   };
 
-  // Toggle section completion
+  // Toggle section completion with parent-child logic
   const toggleCompletion = (sectionId: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    const newProgress = { ...progress, [sectionId]: !progress[sectionId] };
+    
+    const isCurrentlyChecked = progress[sectionId];
+    const newState = !isCurrentlyChecked;
+    
+    // Find the section in contentData
+    const section = contentData.find(s => s.id === sectionId);
+    
+    // Case 1: Toggling a main section (parent)
+    if (section) {
+      const updates: Record<string, boolean> = {
+        [sectionId]: newState
+      };
+      
+      // Auto toggle all subsections
+      if (section.subsections) {
+        section.subsections.forEach(sub => {
+          updates[sub.id] = newState;
+        });
+      }
+      
+      const newProgress = { ...progress, ...updates };
+      setProgress(newProgress);
+      storageService.setProgressBatch(updates);
+      return;
+    }
+    
+    // Case 2: Toggling a subsection (child)
+    // Find parent section
+    const parentSection = contentData.find(s => 
+      s.subsections?.some(sub => sub.id === sectionId)
+    );
+    
+    if (parentSection && parentSection.subsections) {
+      const updates: Record<string, boolean> = {
+        [sectionId]: newState
+      };
+      
+      // Check if all subsections are completed after this toggle
+      const allSubsectionsComplete = parentSection.subsections.every(sub => {
+        if (sub.id === sectionId) return newState; // Current subsection
+        return progress[sub.id]; // Other subsections
+      });
+      
+      // Auto toggle parent if all children are complete
+      updates[parentSection.id] = allSubsectionsComplete;
+      
+      const newProgress = { ...progress, ...updates };
+      setProgress(newProgress);
+      storageService.setProgressBatch(updates);
+      return;
+    }
+    
+    // Fallback: single item toggle
+    const newProgress = { ...progress, [sectionId]: newState };
     setProgress(newProgress);
-    storageService.setProgress(sectionId, !progress[sectionId]);
+    storageService.setProgress(sectionId, newState);
   };
 
   return (
